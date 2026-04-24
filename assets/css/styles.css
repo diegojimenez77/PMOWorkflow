@@ -483,6 +483,16 @@ input, textarea, select {
     background-color: #0284c7; /* sky-600 approx */
 }
 
+.nav-section-label {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #6366f1;
+    padding: 1.2rem 1.6rem 0.4rem;
+    margin-top: 0.8rem;
+}
+
 .sidebar__footer {
     margin-top: auto;
     padding-top: 1.6rem;
@@ -1354,6 +1364,215 @@ select.form-input {
     background-color: var(--color-tertiary-container);
 }
 
+/* ── Métricas ──────────────────────────────────────────────────────────── */
+
+.metricas-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+}
+
+@media (min-width: 600px) {
+    .metricas-kpi-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 1200px) {
+    .metricas-kpi-grid { grid-template-columns: repeat(6, 1fr); }
+}
+
+.metricas-kpi-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    border-top: 3px solid currentColor;
+    padding: 1.6rem !important;
+}
+
+.metricas-kpi-card__icon {
+    margin-bottom: 0.8rem;
+}
+
+.metricas-kpi-card__icon .material-symbols-outlined {
+    font-size: 2.4rem;
+}
+
+.metricas-kpi-card__value {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--color-on-surface);
+    font-variant-numeric: tabular-nums;
+}
+
+.metricas-kpi-card__label {
+    font-size: var(--font-size-body-sm);
+    font-weight: 600;
+    color: var(--color-on-surface);
+    margin-top: 0.6rem;
+}
+
+.metricas-kpi-card__sub {
+    font-size: 1.1rem;
+    color: var(--color-on-surface-variant);
+}
+
+.chart-card__subtitle {
+    font-size: var(--font-size-body-sm);
+    color: var(--color-on-surface-variant);
+    margin-top: -0.8rem;
+    margin-bottom: 1.6rem;
+}
+
+.metricas-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem 2rem;
+    margin-top: 1.2rem;
+}
+
+.metricas-legend__item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: var(--font-size-body-sm);
+    color: var(--color-on-surface-variant);
+    cursor: default;
+}
+
+.metricas-legend__dot {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.metricas-hbars {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+.metricas-hbar__row {
+    display: grid;
+    grid-template-columns: 9rem 1fr 7rem;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.metricas-hbar__label {
+    font-size: var(--font-size-body-sm);
+    color: var(--color-on-surface-variant);
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.metricas-hbar__track {
+    background-color: var(--color-surface-container-high);
+    border-radius: var(--radius-full);
+    height: 1.2rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.metricas-hbar__fill {
+    height: 100%;
+    border-radius: var(--radius-full);
+    width: 0%;
+    transition: width 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.metricas-hbar__value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-on-surface);
+    white-space: nowrap;
+}
+
+.metricas-tooltip {
+    position: fixed;
+    z-index: 3000;
+    background-color: var(--color-on-surface);
+    color: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: 0.6rem 1.2rem;
+    font-size: 1.2rem;
+    display: none;
+    flex-direction: column;
+    gap: 0.2rem;
+    pointer-events: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    max-width: 26rem;
+}
+
+.metricas-tooltip strong {
+    font-weight: 700;
+}
+
+.metricas-top-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-body-sm);
+}
+
+.metricas-top-table th {
+    text-align: left;
+    font-size: var(--font-size-label-caps);
+    color: var(--color-on-surface-variant);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid var(--color-outline-variant);
+    white-space: nowrap;
+}
+
+.metricas-top-table td {
+    padding: 1.2rem 1.2rem;
+    color: var(--color-on-surface);
+    border-bottom: 1px solid var(--color-outline-variant);
+    vertical-align: middle;
+}
+
+.metricas-top-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.metricas-top-table tbody tr {
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+.metricas-top-table tbody tr:hover td {
+    background-color: var(--color-surface-container-low);
+}
+
+.metricas-rank {
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--color-primary);
+    width: 3.2rem;
+    text-align: center;
+}
+
+.metricas-req-title {
+    font-weight: 600;
+    color: var(--color-on-surface);
+}
+
+.metricas-req-id {
+    font-size: 1.1rem;
+    color: var(--color-outline);
+    margin-top: 0.2rem;
+}
+
+.metricas-budget-cell {
+    font-weight: 700;
+    color: #6366f1;
+    font-variant-numeric: tabular-nums;
+}
+
 /* Notificaciones */
 .notifications {
     position: fixed;
@@ -2031,6 +2250,55 @@ select.form-input {
     font-size: 4.8rem;
     color: var(--color-outline-variant);
     margin-bottom: var(--space-stack-sm);
+}
+
+/* Agrupaciones por etapa dentro del panel de aprobaciones */
+
+.review-stage-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-stack-sm);
+}
+
+.review-stage-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: var(--space-stack-sm) 0.4rem;
+    border-bottom: 1px solid var(--color-outline-variant);
+    margin-bottom: var(--space-stack-xs);
+}
+
+.review-stage-header .material-symbols-outlined {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.review-stage-header__label {
+    flex: 1;
+    font-size: var(--font-size-label-caps);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-on-surface-variant);
+}
+
+.review-stage-header__count {
+    font-size: var(--font-size-body-sm);
+    font-weight: 600;
+    color: var(--color-on-surface-variant);
+    background-color: var(--color-surface-variant);
+    padding: 0.2rem 0.8rem;
+    border-radius: var(--radius-full);
+    flex-shrink: 0;
+}
+
+.review-stage-empty {
+    font-size: var(--font-size-body-sm);
+    color: var(--color-outline);
+    padding: 0.6rem var(--space-stack-md);
+    font-style: italic;
 }
 
 /* Badges de prioridad */
@@ -3424,6 +3692,30 @@ select.form-input {
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
+    max-height: 16.4rem;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-outline-variant) transparent;
+    padding-right: 0.4rem;
+}
+
+.gov-stage-card__list::-webkit-scrollbar {
+    width: 0.4rem;
+}
+
+.gov-stage-card__list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.gov-stage-card__list::-webkit-scrollbar-thumb {
+    background-color: var(--color-outline-variant);
+    border-radius: var(--radius-full);
+}
+
+.gov-stage-card__list--full {
+    max-height: none;
+    overflow-y: visible;
+    padding-right: 0;
 }
 
 .gov-stage-card__empty {
@@ -3682,3 +3974,844 @@ select.form-input {
 
  
  
+/* ==================== Badge: Cerrado ==================== */
+
+.badge--closed {
+    background-color: var(--color-surface-container);
+    color: var(--color-on-surface-variant);
+    border: 1px solid var(--color-outline-variant);
+}
+
+/* ===================== Kanban Board ===================== */
+
+.kanban-wrapper {
+    overflow-x: auto;
+    padding-bottom: 1.6rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-outline-variant) transparent;
+}
+
+.kanban-wrapper::-webkit-scrollbar { height: 6px; }
+.kanban-wrapper::-webkit-scrollbar-track { background: transparent; }
+.kanban-wrapper::-webkit-scrollbar-thumb { background: var(--color-outline-variant); border-radius: 3px; }
+
+.kanban-board {
+    display: flex;
+    gap: 1.4rem;
+    min-width: max-content;
+    padding: 0.4rem 0.2rem 1rem;
+    align-items: flex-start;
+}
+
+.kanban-col {
+    width: 27rem;
+    min-width: 27rem;
+    background: var(--color-surface-container-low);
+    border-radius: 1.2rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 22rem);
+    border: 1px solid var(--color-outline-variant);
+}
+
+.kanban-col__header {
+    padding: 1rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: var(--color-surface-container);
+    border-bottom: 1px solid var(--color-outline-variant);
+}
+
+.kanban-col__header-stripe {
+    width: 4px;
+    height: 2rem;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.kanban-col__icon { font-size: 1.8rem; color: var(--color-on-surface-variant); }
+
+.kanban-col__title {
+    font-size: var(--font-size-label-lg);
+    font-weight: 600;
+    color: var(--color-on-surface);
+    flex: 1;
+}
+
+.kanban-col__count {
+    background: var(--color-surface);
+    color: var(--color-on-surface-variant);
+    font-size: var(--font-size-label-sm);
+    font-weight: 700;
+    padding: 0.2rem 0.7rem;
+    border-radius: 10rem;
+    min-width: 2.2rem;
+    text-align: center;
+}
+
+.kanban-col__body {
+    padding: 0.8rem;
+    overflow-y: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-outline-variant) transparent;
+}
+
+.kanban-col__empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 2.4rem 1rem;
+    color: var(--color-on-surface-variant);
+    font-size: var(--font-size-body-sm);
+    text-align: center;
+    opacity: 0.6;
+}
+
+.kanban-card {
+    background: var(--color-surface);
+    border-radius: 0.8rem;
+    padding: 1.2rem;
+    cursor: pointer;
+    border: 1px solid var(--color-outline-variant);
+    transition: box-shadow 0.15s, border-color 0.15s, transform 0.12s;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.kanban-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+.kanban-card--closed { opacity: 0.65; }
+
+.kanban-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4rem;
+}
+
+.kanban-card__id {
+    font-size: var(--font-size-label-sm);
+    color: var(--color-on-surface-variant);
+    font-weight: 600;
+    font-family: monospace;
+}
+
+.kanban-card__title {
+    font-size: var(--font-size-body-md);
+    font-weight: 600;
+    color: var(--color-on-surface);
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.kanban-card__meta { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+.kanban-card__tag {
+    font-size: 1.1rem;
+    padding: 0.2rem 0.7rem;
+    border-radius: 10rem;
+    background: var(--color-surface-container);
+    color: var(--color-on-surface-variant);
+    font-weight: 500;
+}
+
+.kanban-card__doc-progress { display: flex; flex-direction: column; gap: 0.3rem; }
+
+.kanban-card__doc-bar {
+    height: 4px;
+    background: var(--color-surface-container);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.kanban-card__doc-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.4s ease;
+}
+
+.kanban-card__doc-label {
+    font-size: 1.1rem;
+    color: var(--color-on-surface-variant);
+    line-height: 1;
+}
+
+.kanban-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--color-outline-variant);
+}
+
+.kanban-card__budget {
+    font-size: var(--font-size-label-sm);
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+/* =================== PM Detail View ==================== */
+
+.impl-detail {
+    padding: 2rem 2.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 112rem;
+}
+
+.impl-stepper {
+    display: flex;
+    align-items: flex-start;
+    overflow-x: auto;
+    padding-bottom: 0.4rem;
+}
+
+.impl-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-width: 9.6rem;
+    position: relative;
+}
+
+.impl-step__dot {
+    width: 3.4rem;
+    height: 3.4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-surface-container);
+    border: 2px solid var(--color-outline-variant);
+    z-index: 1;
+    transition: background 0.2s, border-color 0.2s;
+    position: relative;
+}
+
+.impl-step__dot .material-symbols-outlined {
+    font-size: 1.8rem;
+    color: var(--color-on-surface-variant);
+}
+
+.impl-step--done .impl-step__dot {
+    background: var(--color-primary-container);
+    border-color: var(--color-primary);
+}
+
+.impl-step--done .impl-step__dot .material-symbols-outlined {
+    color: var(--color-on-primary-container);
+}
+
+.impl-step--active .impl-step__dot {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 5px var(--color-primary-container);
+}
+
+.impl-step--active .impl-step__dot .material-symbols-outlined {
+    color: var(--color-on-primary);
+}
+
+.impl-step__label {
+    font-size: 1.15rem;
+    text-align: center;
+    margin-top: 0.6rem;
+    color: var(--color-on-surface-variant);
+    line-height: 1.25;
+    max-width: 8.4rem;
+}
+
+.impl-step--active .impl-step__label { color: var(--color-primary); font-weight: 600; }
+.impl-step--done .impl-step__label   { color: var(--color-on-surface); }
+
+.impl-step__track {
+    position: absolute;
+    top: 1.7rem;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background: var(--color-outline-variant);
+    z-index: 0;
+}
+
+.impl-step--done .impl-step__track { background: var(--color-primary); }
+.impl-step:last-child .impl-step__track { display: none; }
+
+.impl-content-grid {
+    display: grid;
+    grid-template-columns: 30rem 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+@media (max-width: 960px) {
+    .impl-content-grid { grid-template-columns: 1fr; }
+}
+
+.impl-card {
+    background: var(--color-surface-container-low);
+    border-radius: 1.2rem;
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    border: 1px solid var(--color-outline-variant);
+}
+
+.impl-card__title {
+    font-size: var(--font-size-title-sm);
+    font-weight: 700;
+    color: var(--color-on-surface);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.impl-card__title .material-symbols-outlined {
+    color: var(--color-primary);
+    font-size: 2rem;
+}
+
+.impl-info-row { display: flex; flex-direction: column; gap: 0.25rem; }
+
+.impl-info-row__label {
+    font-size: 1.05rem;
+    color: var(--color-on-surface-variant);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+}
+
+.impl-info-row__value {
+    font-size: var(--font-size-body-sm);
+    color: var(--color-on-surface);
+}
+
+.impl-doc-list { display: flex; flex-direction: column; gap: 0.6rem; }
+
+.impl-doc-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    background: var(--color-surface);
+    border-radius: 0.8rem;
+    border: 1px solid var(--color-outline-variant);
+}
+
+.impl-doc-item--missing { border-style: dashed; opacity: 0.72; }
+
+.impl-doc-item__icon {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 0.6rem;
+    background: var(--color-primary-container);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.impl-doc-item__icon .material-symbols-outlined {
+    font-size: 1.8rem;
+    color: var(--color-on-primary-container);
+}
+
+.impl-doc-item--missing .impl-doc-item__icon { background: var(--color-surface-container); }
+.impl-doc-item--missing .impl-doc-item__icon .material-symbols-outlined { color: var(--color-on-surface-variant); }
+
+.impl-doc-item__info { flex: 1; min-width: 0; }
+
+.impl-doc-item__name {
+    font-size: var(--font-size-body-sm);
+    font-weight: 600;
+    color: var(--color-on-surface);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.impl-doc-item__meta {
+    font-size: 1.1rem;
+    color: var(--color-on-surface-variant);
+    margin-top: 0.1rem;
+}
+
+.impl-doc-item__badge {
+    font-size: 1.05rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 10rem;
+    flex-shrink: 0;
+    font-weight: 600;
+}
+
+.impl-doc-item__badge--required {
+    background: var(--color-error-container);
+    color: var(--color-on-error-container);
+}
+
+.impl-doc-item__badge--optional {
+    background: var(--color-surface-container);
+    color: var(--color-on-surface-variant);
+}
+
+.impl-add-doc-form {
+    background: var(--color-surface-container);
+    border-radius: 0.8rem;
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 1px dashed var(--color-primary);
+    margin-top: 0.8rem;
+}
+
+.impl-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 1.4rem 2.4rem;
+    border-top: 1px solid var(--color-outline-variant);
+    background: var(--color-surface);
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+}
+
+.impl-advance-status {
+    font-size: var(--font-size-body-sm);
+    color: var(--color-error);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.impl-advance-status .material-symbols-outlined { font-size: 1.8rem; }
+.impl-advance-status--ok { color: var(--color-primary); }
+
+/* ==================== PM Metrics ======================= */
+
+.pm-stage-bar { display: flex; flex-direction: column; gap: 1rem; }
+
+.pm-stage-bar__row { display: flex; align-items: center; gap: 1.2rem; }
+
+.pm-stage-bar__label {
+    width: 15rem;
+    font-size: var(--font-size-body-sm);
+    color: var(--color-on-surface);
+    flex-shrink: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pm-stage-bar__track {
+    flex: 1;
+    height: 1rem;
+    background: var(--color-surface-container);
+    border-radius: 10rem;
+    overflow: hidden;
+}
+
+.pm-stage-bar__fill {
+    height: 100%;
+    border-radius: 10rem;
+    transition: width 0.5s ease;
+}
+
+.pm-stage-bar__count {
+    font-size: var(--font-size-body-sm);
+    font-weight: 700;
+    color: var(--color-on-surface);
+    min-width: 2rem;
+    text-align: right;
+}
+
+/* ==================== Documentación por Etapa ==================== */
+
+.docs-summary-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+    background: var(--color-surface-container-low);
+    border-radius: 1.2rem;
+    padding: 1.6rem 2rem;
+    border: 1px solid var(--color-outline-variant);
+}
+
+@media (max-width: 900px) {
+    .docs-summary-bar { grid-template-columns: repeat(2, 1fr); }
+}
+
+.docs-summary-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.docs-summary-item .material-symbols-outlined {
+    font-size: 2.2rem;
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.docs-summary-item__label {
+    font-size: 1.1rem;
+    color: var(--color-on-surface-variant);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    display: block;
+}
+
+.docs-summary-item__value {
+    font-size: var(--font-size-title-sm);
+    font-weight: 700;
+    color: var(--color-on-surface);
+    display: block;
+}
+
+/* Grid de etapas */
+
+.docs-stages-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+}
+
+@media (max-width: 900px) {
+    .docs-stages-grid { grid-template-columns: 1fr; }
+}
+
+.docs-stage-card {
+    background: var(--color-surface-container-low);
+    border-radius: 1.2rem;
+    border: 1px solid var(--color-outline-variant);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.15s;
+}
+
+.docs-stage-card--active {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-container);
+}
+
+.docs-stage-card--done {
+    border-color: #10b98140;
+}
+
+.docs-stage-card--pending {
+    opacity: 0.7;
+}
+
+.docs-stage-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 1.4rem;
+    border-bottom: 1px solid var(--color-outline-variant);
+    border-left: 4px solid var(--color-outline-variant);
+    background: var(--color-surface-container);
+    gap: 1rem;
+}
+
+.docs-stage-card__header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.docs-stage-card__icon {
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.docs-stage-card__icon .material-symbols-outlined {
+    font-size: 2rem;
+}
+
+.docs-stage-card__name {
+    font-size: var(--font-size-title-sm);
+    font-weight: 700;
+    color: var(--color-on-surface);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.docs-stage-card__sub {
+    font-size: var(--font-size-body-sm);
+    color: var(--color-on-surface-variant);
+    margin-top: 0.15rem;
+}
+
+.docs-stage-state-chip {
+    font-size: 1.15rem;
+    padding: 0.3rem 0.9rem;
+    border-radius: 10rem;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.docs-stage-card__body {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    flex: 1;
+}
+
+.docs-stage-card__footer {
+    padding: 0.8rem 1.2rem;
+    border-top: 1px solid var(--color-outline-variant);
+    background: var(--color-surface-container);
+}
+
+.docs-stage-empty {
+    font-size: var(--font-size-body-sm);
+    color: var(--color-on-surface-variant);
+    text-align: center;
+    padding: 1.6rem;
+    font-style: italic;
+}
+
+/* Items de documento en la vista docs */
+
+.docs-view-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.7rem 0.8rem;
+    background: var(--color-surface);
+    border-radius: 0.6rem;
+    border: 1px solid var(--color-outline-variant);
+}
+
+.docs-view-item--missing {
+    border-style: dashed;
+    opacity: 0.68;
+}
+
+.docs-view-item__icon {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 0.5rem;
+    background: var(--color-primary-container);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.docs-view-item__icon .material-symbols-outlined {
+    font-size: 1.6rem;
+    color: var(--color-on-primary-container);
+}
+
+.docs-view-item--missing .docs-view-item__icon {
+    background: var(--color-surface-container);
+}
+
+.docs-view-item--missing .docs-view-item__icon .material-symbols-outlined {
+    color: var(--color-on-surface-variant);
+}
+
+.docs-view-item__info {
+    flex: 1;
+    min-width: 0;
+}
+
+.docs-view-item__name {
+    font-size: var(--font-size-body-sm);
+    font-weight: 600;
+    color: var(--color-on-surface);
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.docs-view-item__meta {
+    font-size: 1.1rem;
+    color: var(--color-on-surface-variant);
+    margin-top: 0.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.docs-view-item__format {
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.1rem 0.5rem;
+    border-radius: 4px;
+    background: var(--color-primary-container);
+    color: var(--color-on-primary-container);
+    letter-spacing: 0.03em;
+}
+
+.docs-view-item__badge {
+    font-size: 1.05rem;
+    padding: 0.15rem 0.55rem;
+    border-radius: 10rem;
+    flex-shrink: 0;
+    font-weight: 600;
+}
+
+.docs-view-item__badge--req {
+    background: var(--color-error-container);
+    color: var(--color-on-error-container);
+}
+
+.docs-view-item__badge--opt {
+    background: var(--color-surface-container);
+    color: var(--color-on-surface-variant);
+}
+
+/* =================== Kanban Filter Bar =================== */
+
+.kanban-filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1rem 1.6rem;
+    background: var(--color-surface-container-low);
+    border-radius: 1rem;
+    border: 1px solid var(--color-outline-variant);
+    flex-wrap: wrap;
+    margin-bottom: 0.4rem;
+}
+
+.kanban-filter-bar__label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: var(--font-size-label-sm);
+    font-weight: 600;
+    color: var(--color-on-surface-variant);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.kanban-filter-bar__label .material-symbols-outlined {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+}
+
+.kanban-filter-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    flex: 1;
+}
+
+.kanban-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    border-radius: 10rem;
+    border: 1.5px solid var(--color-outline-variant);
+    background: var(--color-surface);
+    color: var(--color-on-surface-variant);
+    font-size: var(--font-size-label-sm);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, color 0.15s, box-shadow 0.15s;
+    white-space: nowrap;
+}
+
+.kanban-chip:hover {
+    background: var(--color-surface-container);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.kanban-chip--active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-on-primary);
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.35);
+    font-weight: 700;
+}
+
+.kanban-chip--active:hover {
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+}
+
+.kanban-chip__label {
+    line-height: 1;
+}
+
+.kanban-chip__count {
+    font-size: 1.1rem;
+    font-weight: 700;
+    background: rgba(0, 0, 0, 0.12);
+    border-radius: 10rem;
+    padding: 0.1rem 0.5rem;
+    line-height: 1.4;
+    min-width: 1.8rem;
+    text-align: center;
+}
+
+.kanban-chip--active .kanban-chip__count {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* Sin resultados en el kanban */
+
+.kanban-no-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 4rem 2rem;
+    width: 100%;
+    color: var(--color-on-surface-variant);
+    text-align: center;
+}
+
+.kanban-no-results .material-symbols-outlined {
+    font-size: 4rem;
+    opacity: 0.4;
+}
+
+.kanban-no-results p {
+    font-size: var(--font-size-body-md);
+    max-width: 40rem;
+}
